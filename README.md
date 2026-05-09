@@ -1,85 +1,87 @@
-# 📚 Gestión de Biblioteca
+# Gestión de Biblioteca
 
-Aplicación de escritorio desarrollada en C# para la gestión de libros, usuarios y préstamos mediante un sistema CRUD completo.
+Aplicación de escritorio desarrollada en **C# Windows Forms** para administrar libros, usuarios y préstamos de una biblioteca.
 
----
+## Tecnologías utilizadas
 
-## 🛠 Tecnologías utilizadas
+- C#
+- Windows Forms
+- .NET 8
+- Visual Studio Community
+- Persistencia local con JSON
 
-* Lenguaje: C#
-* Framework: Windows Forms (.NET)
-* IDE: Visual Studio
+## Funcionalidades principales
 
----
+### Libros
+- Agregar libros
+- Editar libros
+- Eliminar libros
+- Buscar libros por ID, título o autor
+- Control de disponibilidad
 
-## 🚀 Instalación
+### Usuarios
+- Registrar usuarios
+- Editar usuarios
+- Eliminar usuarios
+- Buscar usuarios por ID, nombre o correo
 
-1. Clonar el repositorio:
+### Préstamos
+- Registrar préstamos
+- Marcar devolución de libros
+- Eliminar préstamos
+- Validar disponibilidad de libros
 
+### Estadísticas
+- Gráfico de libros más prestados
+- Gráfico de usuarios más activos
+- Gráfico de disponibilidad del inventario
+- Tarjetas de resumen general
+
+## Arquitectura MVC aplicada
+
+El proyecto está organizado para demostrar separación de responsabilidades:
+
+```text
+Models/       Clases del sistema: Libro, Usuario, Prestamo y Persona
+Controllers/  BibliotecaManager: lógica de negocio, validaciones y operaciones CRUD
+Views/        MainForm: interfaz gráfica de Windows Forms
+Data/         BibliotecaDataStore: guardado y carga de datos en JSON
+Controls/     BarChartControl: control gráfico reutilizable
 ```
-git clone https://github.com/TU-USUARIO/gestion-biblioteca.git
+
+## Persistencia de datos
+
+Los datos se guardan automáticamente en el archivo:
+
+```text
+datos_biblioteca.json
 ```
 
-2. Abrir el proyecto en Visual Studio.
+Este archivo se crea dentro de la carpeta de salida del programa al ejecutarlo.
 
-3. Ejecutar el programa presionando **F5** o el botón de "Iniciar".
+## Cómo ejecutar el proyecto
 
----
+1. Abrir Visual Studio Community.
+2. Seleccionar **Open a project or solution**.
+3. Abrir el archivo:
 
-## 💻 Uso
+```text
+Gestion de biblioteca.csproj
+```
 
-La aplicación permite gestionar una biblioteca con las siguientes funcionalidades:
+4. Presionar **F5** o el botón **Iniciar**.
 
-### 📖 Libros
+## Buenas prácticas incluidas
 
-* Agregar libros
-* Editar libros
-* Eliminar libros
-* Visualizar disponibilidad
+- Validaciones de campos obligatorios
+- Validación de año del libro
+- Validación básica de correo electrónico
+- Control de duplicados
+- Confirmación antes de eliminar registros
+- Separación de modelo, vista, controlador y datos
+- Uso de listas, diccionarios y matriz de préstamos
+- Interfaz organizada y funcional
 
-### 👤 Usuarios
+## Autor
 
-* Registrar usuarios
-* Editar usuarios
-* Eliminar usuarios
-
-### 🔄 Préstamos
-
-* Registrar préstamos
-* Devolver libros
-* Controlar estado de préstamos
-
----
-
-## 📊 Características adicionales
-
-* Uso de Programación Orientada a Objetos:
-
-  * Clases
-  * Herencia
-  * Encapsulamiento
-  * Polimorfismo
-
-* Uso de estructuras de datos:
-
-  * Listas
-  * Matrices
-
-* Interfaz gráfica intuitiva
-
----
-
-## 📂 Estructura del proyecto
-
-* `Modelo.cs` → Clases principales (Libro, Usuario, Préstamo)
-* `BibliotecaManager.cs` → Lógica del sistema
-* `MainForm.cs` → Interfaz gráfica
-* `Program.cs` → Punto de inicio
-
----
-
-## 👨‍💻 Autor
-
-* Gustavo Navarro
-
----
+Gustavo Navarro
